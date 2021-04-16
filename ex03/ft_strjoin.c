@@ -6,7 +6,7 @@
 /*   By: dludtke- <dludtke-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 18:18:08 by dludtke-          #+#    #+#             */
-/*   Updated: 2021/04/15 18:59:56 by dludtke-         ###   ########.fr       */
+/*   Updated: 2021/04/16 14:37:50 by dludtke-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,12 @@ void	ft_getstrjoin(int size, char **strs, char *sep, char *str)
 	{
 		j = 0;
 		while (strs[i][j] != '\0')
-		{
-			str[k] = strs[i][j];
-			j++;
-			k++;
-		}
+			str[k++] = strs[i][j++];
 		j = 0;
-		while (j < ft_strlen(sep))
+		if ((i + 1) < size)
 		{
-			str[k] = sep[j];
-			j++;
-			k++;
+			while (j < ft_strlen(sep))
+				str[k++] = sep[j++];
 		}
 		i++;
 	}
